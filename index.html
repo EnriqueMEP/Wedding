@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boda de Rosendo e Inma - 20 de Junio de 2026">
+
+    <!-- ================================================
+         PERSONALIZACIÓN: Cambia el título aquí
+    ================================================= -->
+    <title>Rosendo & Inma | Nuestra Boda</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts: Playfair Display (elegant serif) + Inter (modern sans) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ================================================
+         MODO OSCURO (Posición Fija)
+    ================================================= -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro" title="Cambiar modo oscuro">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+        <i class="fas fa-sun" aria-hidden="true"></i>
+    </button>
+
+    <!-- ================================================
+         NAVEGACIÓN
+    ================================================= -->
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <div class="nav-container">
+            <!-- ================================================
+                 PERSONALIZACIÓN: Nombres de los novios en el logo
+            ================================================= -->
+            <a href="#hero" class="nav-logo"><span class="initial-1">R</span> & <span class="initial-2">I</span></a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir navegación" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu" role="menubar">
+                <li role="none"><a href="#hero" role="menuitem">Inicio</a></li>
+                <li role="none"><a href="#story" role="menuitem">Nuestra Historia</a></li>
+                <li role="none"><a href="#schedule" role="menuitem">Programa</a></li>
+                <li role="none"><a href="#venue" role="menuitem">Lugar</a></li>
+                <li role="none"><a href="#gallery" role="menuitem">Galería</a></li>
+                <li role="none"><a href="#rsvp" role="menuitem">Confirmar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ================================================
+         HERO / LANDING SECTION
+    ================================================= -->
+    <header class="hero" id="hero">
+        <!-- Animated Background -->
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="bokeh-container" aria-hidden="true">
+                <div class="bokeh bokeh-1"></div>
+                <div class="bokeh bokeh-2"></div>
+                <div class="bokeh bokeh-3"></div>
+                <div class="bokeh bokeh-4"></div>
+                <div class="bokeh bokeh-5"></div>
+                <div class="bokeh bokeh-6"></div>
+            </div>
+            <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+            <!-- Corazones flotantes -->
+            <div class="floating-hearts" aria-hidden="true">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-subtitle reveal-text">Nos Casamos</p>
+
+            <!-- ================================================
+                 PERSONALIZACIÓN: Nombres de los novios
+            ================================================= -->
+            <h1 class="hero-title">
+                <span class="name name-1">Rosendo</span>
+                <span class="ampersand">&</span>
+                <span class="name name-2">Inma</span>
+            </h1>
+
+            <!-- ================================================
+                 PERSONALIZACIÓN: Fecha de la boda
+            ================================================= -->
+            <p class="hero-date">
+                <span class="date-line"></span>
+                <span>20 de Junio de 2026</span>
+                <span class="date-line"></span>
+            </p>
+
+            <div class="hero-cta">
+                <a href="#rsvp" class="btn btn-primary">
+                    <span>Confirma tu Asistencia</span>
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                </a>
+                <a href="#story" class="btn btn-secondary">
+                    <span>Nuestra Historia</span>
+                    <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Desliza</span>
+        </div>
+    </header>
+
+    <!-- ================================================
+         MAIN CONTENT
+    ================================================= -->
+    <main id="main-content">
+
+        <!-- ================================================
+             SECCIÓN DE CUENTA REGRESIVA
+        ================================================= -->
+        <section class="countdown-section" id="countdown" aria-label="Cuenta regresiva para la boda">
+            <div class="container">
+                <h2 class="section-subtitle reveal-up">Cuenta Regresiva</h2>
+                <p class="countdown-label reveal-up">Para Nuestro Día Especial</p>
+
+                <!-- ================================================
+                     PERSONALIZACIÓN: La fecha se configura en script.js
+                     Busca: const weddingDate = new Date('...')
+                ================================================= -->
+                <div class="countdown-timer" id="countdownTimer" role="timer" aria-live="polite">
+                    <div class="countdown-item reveal-up" style="--delay: 0.1s">
+                        <div class="countdown-value" id="countDays">000</div>
+                        <div class="countdown-unit">Días</div>
+                    </div>
+                    <div class="countdown-separator reveal-up" style="--delay: 0.15s" aria-hidden="true">:</div>
+                    <div class="countdown-item reveal-up" style="--delay: 0.2s">
+                        <div class="countdown-value" id="countHours">00</div>
+                        <div class="countdown-unit">Horas</div>
+                    </div>
+                    <div class="countdown-separator reveal-up" style="--delay: 0.25s" aria-hidden="true">:</div>
+                    <div class="countdown-item reveal-up" style="--delay: 0.3s">
+                        <div class="countdown-value" id="countMinutes">00</div>
+                        <div class="countdown-unit">Minutos</div>
+                    </div>
+                    <div class="countdown-separator reveal-up" style="--delay: 0.35s" aria-hidden="true">:</div>
+                    <div class="countdown-item reveal-up" style="--delay: 0.4s">
+                        <div class="countdown-value" id="countSeconds">00</div>
+                        <div class="countdown-unit">Segundos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             NUESTRA HISTORIA (Línea de Tiempo)
+        ================================================= -->
+        <section class="story-section" id="story" aria-labelledby="story-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up" id="story-heading">Nuestra Historia</h2>
+                    <p class="section-description reveal-up">El comienzo de nuestra vida juntos</p>
+                </header>
+
+                <div class="timeline">
+                    <!-- ================================================
+                         PERSONALIZACIÓN: Modifica los eventos de la línea de tiempo
+                    ================================================= -->
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-marker">
+                            <i class="fas fa-coffee" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">Marzo 2020</span>
+                            <h3>Primer Encuentro</h3>
+                            <p>Nos conocimos en una acogedora cafetería una tarde lluviosa. Una conversación sobre
+                                música que duró horas nos hizo sentir que algo especial estaba comenzando.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-marker">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">Junio 2020</span>
+                            <h3>Primera Cita</h3>
+                            <p>Nuestra primera cita oficial fue un picnic al atardecer en la playa. Vimos salir las
+                                estrellas y supimos que esto era algo especial.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-marker">
+                            <i class="fas fa-plane" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">Diciembre 2021</span>
+                            <h3>Primer Viaje Juntos</h3>
+                            <p>Viajamos a París, la ciudad del amor. Caminando por el Sena, nos dimos cuenta de que
+                                habíamos encontrado a nuestra persona especial.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-marker">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">Agosto 2023</span>
+                            <h3>Viviendo Juntos</h3>
+                            <p>Dimos el gran paso de mudarnos juntos. Construyendo nuestro hogar lleno de momentos
+                                compartidos y muchos recuerdos inolvidables.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-marker">
+                            <i class="fas fa-ring" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">Febrero 2025</span>
+                            <h3>La Pedida de Mano</h3>
+                            <p>Bajo un manto de estrellas en nuestra playa favorita, Pedro se arrodilló y con emoción
+                                hizo la pregunta. Con lágrimas de felicidad, Lola dijo que sí.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-marker">
+                            <i class="fas fa-church" aria-hidden="true"></i>
+                        </div>
+                        <div class="timeline-content glass-card">
+                            <span class="timeline-date">Junio 2026</span>
+                            <h3>El Gran Día</h3>
+                            <p>No podemos esperar para celebrar con todos vosotros este día tan especial. Hoy comienza
+                                nuestra mayor aventura juntos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             DATOS CURIOSOS DE LA PAREJA
+        ================================================= -->
+        <section class="fun-facts-section" aria-label="Datos sobre la pareja">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up">En Números</h2>
+                    <p class="section-description reveal-up">Nuestra historia en cifras</p>
+                </header>
+
+                <div class="facts-grid">
+                    <div class="fact-card glass-card reveal-up" style="--delay: 0.1s">
+                        <div class="fact-icon">
+                            <i class="fas fa-calendar-days" aria-hidden="true"></i>
+                        </div>
+                        <div class="fact-number" data-count="2190">0</div>
+                        <div class="fact-label">Días Juntos</div>
+                    </div>
+
+                    <div class="fact-card glass-card reveal-up" style="--delay: 0.2s">
+                        <div class="fact-icon">
+                            <i class="fas fa-mug-hot" aria-hidden="true"></i>
+                        </div>
+                        <div class="fact-number" data-count="1825">0</div>
+                        <div class="fact-label">Cafés Compartidos</div>
+                    </div>
+
+                    <div class="fact-card glass-card reveal-up" style="--delay: 0.3s">
+                        <div class="fact-icon">
+                            <i class="fas fa-plane" aria-hidden="true"></i>
+                        </div>
+                        <div class="fact-number" data-count="12">0</div>
+                        <div class="fact-label">Viajes Juntos</div>
+                    </div>
+
+                    <div class="fact-card glass-card reveal-up" style="--delay: 0.4s">
+                        <div class="fact-icon">
+                            <i class="fas fa-infinity" aria-hidden="true"></i>
+                        </div>
+                        <div class="fact-number" data-count="1">0</div>
+                        <div class="fact-label">Amor Infinito</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             PROGRAMA DEL DÍA
+        ================================================= -->
+        <section class="schedule-section" id="schedule" aria-labelledby="schedule-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up" id="schedule-heading">Programa del Día</h2>
+                    <p class="section-description reveal-up">Únete a nosotros en esta celebración tan especial</p>
+                </header>
+
+                <div class="schedule-grid">
+                    <!-- ================================================
+                         PERSONALIZACIÓN: Modifica los horarios y detalles
+                    ================================================= -->
+                    <article class="schedule-card glass-card reveal-up" style="--delay: 0.1s">
+                        <div class="schedule-icon">
+                            <i class="fas fa-church" aria-hidden="true"></i>
+                        </div>
+                        <div class="schedule-time">16:00h</div>
+                        <h3 class="schedule-title">Ceremonia</h3>
+                        <p class="schedule-description">Acompáñanos mientras intercambiamos nuestros votos en la capilla
+                            del jardín. Por favor, llega 30 minutos antes.</p>
+                        <span class="schedule-dress">Etiqueta Formal</span>
+                    </article>
+
+                    <article class="schedule-card glass-card reveal-up" style="--delay: 0.2s">
+                        <div class="schedule-icon">
+                            <i class="fas fa-champagne-glasses" aria-hidden="true"></i>
+                        </div>
+                        <div class="schedule-time">17:00h</div>
+                        <h3 class="schedule-title">Cóctel de Bienvenida</h3>
+                        <p class="schedule-description">Disfruta de cócteles y aperitivos en la terraza. Barra libre
+                            para todos los invitados.</p>
+                        <span class="schedule-dress">Barra Libre</span>
+                    </article>
+
+                    <article class="schedule-card glass-card reveal-up" style="--delay: 0.3s">
+                        <div class="schedule-icon">
+                            <i class="fas fa-utensils" aria-hidden="true"></i>
+                        </div>
+                        <div class="schedule-time">18:30h</div>
+                        <h3 class="schedule-title">Banquete</h3>
+                        <p class="schedule-description">Un exquisito banquete con menú especialmente diseñado. Opciones
+                            vegetarianas y veganas disponibles.</p>
+                        <span class="schedule-dress">Salón Principal</span>
+                    </article>
+
+                    <article class="schedule-card glass-card reveal-up" style="--delay: 0.4s">
+                        <div class="schedule-icon">
+                            <i class="fas fa-music" aria-hidden="true"></i>
+                        </div>
+                        <div class="schedule-time">20:30h</div>
+                        <h3 class="schedule-title">Baile y Fiesta</h3>
+                        <p class="schedule-description">Música en vivo hasta las 22:00h, después DJ hasta la medianoche.
+                        </p>
+                        <span class="schedule-dress">Celebración</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider decorativo -->
+        <div class="section-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <div class="divider-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- ================================================
+             LUGAR Y VIAJE
+        ================================================= -->
+        <section class="venue-section" id="venue" aria-labelledby="venue-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up" id="venue-heading">Lugar y Cómo Llegar</h2>
+                    <p class="section-description reveal-up">Información práctica para tu asistencia</p>
+                </header>
+
+                <div class="venue-grid">
+                    <!-- Información del Lugar -->
+                    <div class="venue-info reveal-left">
+                        <div class="venue-card glass-card">
+                            <div class="venue-image">
+                                <!-- ================================================
+                                     PERSONALIZACIÓN: Reemplaza con la foto real del lugar
+                                ================================================= -->
+                                <img src="https://picsum.photos/800/500?random=venue"
+                                    alt="Salón Jardín de las Rosas exterior" loading="lazy">
+                            </div>
+                            <div class="venue-details">
+                                <!-- ================================================
+                                     PERSONALIZACIÓN: Cambia el nombre y dirección del lugar
+                                ================================================= -->
+                                <h3>Salón Jardín de las Rosas</h3>
+                                <address>
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    Calle del Amor Eterno, 1234<br>
+                                    Madrid, España 28001
+                                </address>
+                                <!-- ================================================
+                                     PERSONALIZACIÓN: Actualiza el enlace de Google Maps
+                                ================================================= -->
+                                <a href="https://maps.google.com/?q=Rose+Garden+Hall+Los+Angeles" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-primary">
+                                    <i class="fas fa-map" aria-hidden="true"></i>
+                                    Ver en el Mapa
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Información de Viaje -->
+                    <div class="travel-info reveal-right">
+                        <!-- Hoteles -->
+                        <div class="info-card glass-card">
+                            <h3><i class="fas fa-hotel" aria-hidden="true"></i> Hoteles Recomendados</h3>
+                            <ul class="hotel-list">
+                                <!-- ================================================
+                                     PERSONALIZACIÓN: Actualiza la información de hoteles
+                                ================================================= -->
+                                <li>
+                                    <strong>Hotel Gran Lujo</strong>
+                                    <span>5 min del lugar • Usa el código BODA2026 para 15% descuento</span>
+                                </li>
+                                <li>
+                                    <strong>Suites Vista al Mar</strong>
+                                    <span>10 min del lugar • Desayuno incluido</span>
+                                </li>
+                                <li>
+                                    <strong>Posada del Centro</strong>
+                                    <span>15 min del lugar • Opción económica</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Transporte -->
+                        <div class="info-card glass-card">
+                            <h3><i class="fas fa-car" aria-hidden="true"></i> Cómo Llegar</h3>
+                            <ul class="transport-list">
+                                <li><i class="fas fa-plane" aria-hidden="true"></i> <strong>En Avión:</strong>
+                                    Aeropuerto de Barajas (30 min en coche)</li>
+                                <li><i class="fas fa-parking" aria-hidden="true"></i> <strong>Parking:</strong>
+                                    Aparcamiento gratuito disponible</li>
+                                <li><i class="fas fa-taxi" aria-hidden="true"></i> <strong>Shuttle:</strong> Servicio
+                                    gratuito desde hoteles asociados</li>
+                            </ul>
+                        </div>
+
+                        <!-- Información de Contacto -->
+                        <div class="info-card glass-card">
+                            <h3><i class="fas fa-phone" aria-hidden="true"></i> Contacto de Emergencia</h3>
+                            <p style="margin-bottom: 0.5rem;">Si tienes alguna duda o problema el día del evento:</p>
+                            <ul class="transport-list">
+                                <li><i class="fas fa-envelope" aria-hidden="true"></i> <strong>Email:</strong>
+                                    boda@rosendoeinma.com</li>
+                                <li><i class="fas fa-phone" aria-hidden="true"></i> <strong>Teléfono:</strong> (+34) 123
+                                    456 789</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             CÓDIGO DE VESTIMENTA Y PREGUNTAS FRECUENTES
+        ================================================= -->
+        <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up" id="faq-heading">Código de Vestimenta & Preguntas</h2>
+                    <p class="section-description reveal-up">Información útil para los invitados</p>
+                </header>
+
+                <!-- Código de Vestimenta -->
+                <div class="dresscode-card glass-card reveal-up">
+                    <div class="dresscode-icon">
+                        <i class="fas fa-user-tie" aria-hidden="true"></i>
+                        <i class="fas fa-user-graduate" aria-hidden="true"></i>
+                    </div>
+                    <h3>Etiqueta Formal</h3>
+                    <p>Solicitamos amablemente etiqueta formal para nuestra celebración. Caballeros: trajes o esmoquin.
+                        Damas: vestidos largos de gala o vestidos cóctel elegantes.</p>
+                    <div class="dresscode-colors">
+                        <span>Paleta de Colores:</span>
+                        <div class="color-swatches">
+                            <span class="swatch" style="background: #0B1B3A" title="Azul Marino"></span>
+                            <span class="swatch" style="background: #2F80ED" title="Azul Real"></span>
+                            <span class="swatch" style="background: #9CC7FF" title="Azul Cielo"></span>
+                            <span class="swatch" style="background: #C9B037" title="Dorado"></span>
+                            <span class="swatch" style="background: #FFFFFF; border: 1px solid #ccc"
+                                title="Blanco (Solo Novia)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div class="faq-accordion reveal-up" role="region" aria-label="Preguntas frecuentes">
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq1">
+                            <span>¿Puedo llevar acompañante?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq1" role="region" hidden>
+                            <p>Debido a la capacidad del lugar, solo podemos acoger a los invitados indicados en la
+                                invitación. Por favor, consulta tu tarjeta de confirmación para detalles sobre tu grupo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq2">
+                            <span>¿Es un lugar apto para niños?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq2" role="region" hidden>
+                            <p>¡Nos encantan los pequeños! Los niños son bienvenidos en la ceremonia. Tendremos un
+                                rincón infantil supervisado durante la recepción con actividades y menú especial para
+                                ellos.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq3">
+                            <span>¿Habrá opciones vegetarianas/veganas?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq3" role="region" hidden>
+                            <p>¡Por supuesto! Por favor, indica cualquier requerimiento dietético en tu confirmación.
+                                Nuestro catering puede acomodar dietas vegetarianas, veganas, sin gluten y otras
+                                necesidades especiales.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq4">
+                            <span>¿Puedo tomar fotos durante la ceremonia?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq4" role="region" hidden>
+                            <p>Solicitamos amablemente una ceremonia "desconectada" — por favor, guarda móviles y
+                                cámaras. Nuestro fotógrafo capturará cada momento mágico y ¡compartiremos todas las
+                                fotos con vosotros!</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq5">
+                            <span>¿Cuál es el plan B si llueve?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq5" role="region" hidden>
+                            <p>El lugar tiene una hermosa capilla interior y salón de recepción como plan alternativo.
+                                Notificaremos a los invitados cualquier cambio de ubicación por email la mañana de la
+                                boda.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="faq6">
+                            <span>¿Cuál es la fecha límite para confirmar?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="accordion-content" id="faq6" role="region" hidden>
+                            <p>Por favor, confirma tu asistencia antes del 20 de mayo de 2026 — un mes antes de la boda.
+                                Esto nos ayuda a finalizar el catering, asientos y otros preparativos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             GALERÍA DE FOTOS
+        ================================================= -->
+        <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up" id="gallery-heading">Nuestra Galería</h2>
+                    <p class="section-description reveal-up">Momentos especiales que hemos compartido</p>
+                </header>
+
+                <div class="gallery-grid">
+                    <!-- ================================================
+                         PERSONALIZACIÓN: Reemplaza las imágenes de muestra con fotos reales
+                         Mantén el atributo data-full apuntando a versiones de alta resolución
+                    ================================================= -->
+                    <figure class="gallery-item reveal-up" style="--delay: 0.05s">
+                        <img src="https://picsum.photos/600/400?random=1"
+                            data-full="https://picsum.photos/1200/800?random=1" alt="Pedro y Lola al atardecer"
+                            loading="lazy">
+                        <figcaption>Atardecer en la playa</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item gallery-item-tall reveal-up" style="--delay: 0.1s">
+                        <img src="https://picsum.photos/600/800?random=2"
+                            data-full="https://picsum.photos/1200/1600?random=2" alt="Pareja abrazándose"
+                            loading="lazy">
+                        <figcaption>Día de nuestro compromiso</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item reveal-up" style="--delay: 0.15s">
+                        <img src="https://picsum.photos/600/400?random=3"
+                            data-full="https://picsum.photos/1200/800?random=3" alt="Riendo juntos" loading="lazy">
+                        <figcaption>Riendo juntos</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item reveal-up" style="--delay: 0.2s">
+                        <img src="https://picsum.photos/600/400?random=4"
+                            data-full="https://picsum.photos/1200/800?random=4" alt="Aventura en París" loading="lazy">
+                        <figcaption>Aventura en París</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item gallery-item-wide reveal-up" style="--delay: 0.25s">
+                        <img src="https://picsum.photos/800/400?random=5"
+                            data-full="https://picsum.photos/1600/800?random=5" alt="Paseo por la playa" loading="lazy">
+                        <figcaption>Paseo por la playa</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item reveal-up" style="--delay: 0.3s">
+                        <img src="https://picsum.photos/600/400?random=6"
+                            data-full="https://picsum.photos/1200/800?random=6" alt="Cita en la cafetería"
+                            loading="lazy">
+                        <figcaption>Cita en la cafetería</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item reveal-up" style="--delay: 0.35s">
+                        <img src="https://picsum.photos/600/400?random=7"
+                            data-full="https://picsum.photos/1200/800?random=7" alt="Bailando bajo las estrellas"
+                            loading="lazy">
+                        <figcaption>Bailando bajo las estrellas</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item gallery-item-tall reveal-up" style="--delay: 0.4s">
+                        <img src="https://picsum.photos/600/800?random=8"
+                            data-full="https://picsum.photos/1200/1600?random=8" alt="La pedida de mano" loading="lazy">
+                        <figcaption>La pedida de mano</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             LIGHTBOX MODAL (para la galería)
+        ================================================= -->
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes" hidden>
+            <button class="lightbox-close" aria-label="Cerrar visor">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <button class="lightbox-prev" aria-label="Imagen anterior">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="lightbox-next" aria-label="Imagen siguiente">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
+            <figure class="lightbox-content">
+                <img src="" alt="" id="lightboxImage">
+                <figcaption id="lightboxCaption"></figcaption>
+            </figure>
+        </div>
+
+        <!-- ================================================
+             CONFIRMAR ASISTENCIA (Formulario multi-paso)
+        ================================================= -->
+        <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up" id="rsvp-heading">Confirma tu Asistencia</h2>
+                    <p class="section-description reveal-up">Esperamos contar con tu presencia en este día tan especial
+                    </p>
+                </header>
+
+                <div class="rsvp-card glass-card reveal-up">
+                    <!-- Pasos del Progreso -->
+                    <div class="rsvp-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3">
+                        <div class="progress-step active" data-step="1">
+                            <span class="step-number">1</span>
+                            <span class="step-label">Tu Info</span>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step" data-step="2">
+                            <span class="step-number">2</span>
+                            <span class="step-label">Asistencia</span>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step" data-step="3">
+                            <span class="step-number">3</span>
+                            <span class="step-label">Detalles</span>
+                        </div>
+                    </div>
+
+                    <!-- ================================================
+                         PERSONALIZACIÓN: Para conectar a un backend real, actualiza
+                         el action y method del formulario, o modifica el controlador JS
+                    ================================================= -->
+                    <form id="rsvpForm" class="rsvp-form" novalidate>
+                        <!-- Paso 1: Información Básica -->
+                        <div class="form-step active" data-step="1">
+                            <h3>Tus Datos</h3>
+
+                            <div class="form-group">
+                                <label for="rsvpName">Nombre Completo *</label>
+                                <input type="text" id="rsvpName" name="name" required
+                                    placeholder="Escribe tu nombre completo" autocomplete="name">
+                                <span class="error-message" aria-live="polite"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rsvpEmail">Correo Electrónico *</label>
+                                <input type="email" id="rsvpEmail" name="email" required placeholder="tu@email.com"
+                                    autocomplete="email">
+                                <span class="error-message" aria-live="polite"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rsvpPhone">Teléfono</label>
+                                <input type="tel" id="rsvpPhone" name="phone" placeholder="(+34) 123 456 789"
+                                    autocomplete="tel">
+                                <span class="error-message" aria-live="polite"></span>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary btn-next">
+                                    Siguiente <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Paso 2: Asistencia -->
+                        <div class="form-step" data-step="2">
+                            <h3>Tu Asistencia</h3>
+
+                            <div class="form-group attendance-options">
+                                <div class="attendance-option">
+                                    <input type="radio" id="attendYes" name="attending" value="yes" required>
+                                    <label for="attendYes" class="attendance-label">
+                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                        <span>Asistiré con gusto</span>
+                                    </label>
+                                </div>
+                                <div class="attendance-option">
+                                    <input type="radio" id="attendNo" name="attending" value="no">
+                                    <label for="attendNo" class="attendance-label">
+                                        <i class="fas fa-times-circle" aria-hidden="true"></i>
+                                        <span>No podré asistir</span>
+                                    </label>
+                                </div>
+                                <span class="error-message" aria-live="polite"></span>
+                            </div>
+
+                            <div class="form-group guests-group" id="guestsGroup" style="display: none;">
+                                <label for="rsvpGuests">Número de Invitados (incluyéndote)</label>
+                                <div class="guest-counter">
+                                    <button type="button" class="counter-btn minus" aria-label="Disminuir invitados">
+                                        <i class="fas fa-minus" aria-hidden="true"></i>
+                                    </button>
+                                    <input type="number" id="rsvpGuests" name="guests" value="1" min="1" max="6"
+                                        readonly>
+                                    <button type="button" class="counter-btn plus" aria-label="Aumentar invitados">
+                                        <i class="fas fa-plus" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary btn-prev">
+                                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Atrás
+                                </button>
+                                <button type="button" class="btn btn-primary btn-next">
+                                    Siguiente <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Paso 3: Detalles Adicionales -->
+                        <div class="form-step" data-step="3">
+                            <h3>Detalles Finales</h3>
+
+                            <div class="form-group" id="dietaryGroup">
+                                <label for="rsvpDietary">Requerimientos Dietéticos</label>
+                                <select id="rsvpDietary" name="dietary">
+                                    <option value="">Sin requerimientos especiales</option>
+                                    <option value="vegetarian">Vegetariano</option>
+                                    <option value="vegan">Vegano</option>
+                                    <option value="gluten-free">Sin gluten</option>
+                                    <option value="halal">Halal</option>
+                                    <option value="kosher">Kosher</option>
+                                    <option value="other">Otro (especifica abajo)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="messageGroup">
+                                <label for="rsvpMessage">Mensaje para los Novios (opcional)</label>
+                                <textarea id="rsvpMessage" name="message" rows="3"
+                                    placeholder="Comparte tus deseos y felicitaciones..."></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary btn-prev">
+                                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Atrás
+                                </button>
+                                <button type="submit" class="btn btn-primary btn-submit">
+                                    <span>Enviar Confirmación</span>
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Estado de Éxito -->
+                        <div class="form-success" id="formSuccess" hidden>
+                            <div class="success-animation">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            </div>
+                            <h3>¡Gracias!</h3>
+                            <p id="successMessage">Tu confirmación ha sido recibida. Esperamos verte pronto.</p>
+                            <button type="button" class="btn btn-secondary" id="resetForm">
+                                Enviar Otra Respuesta
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pétalos cayendo de fondo -->
+    <div class="petals-container" aria-hidden="true" id="petalsContainer"></div>
+
+    <!-- ================================================
+         FOOTER
+    ================================================= -->
+    <footer class="main-footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-names">
+                <!-- ================================================
+                     PERSONALIZACIÓN: Nombres de los novios
+                ================================================= -->
+                <span class="script-text"><span class="name-1">Rosendo</span> & <span class="name-2">Inma</span></span>
+            </div>
+            <p class="footer-date">20 de Junio de 2026</p>
+            <p class="footer-message">Gracias por ser parte de nuestro día especial</p>
+
+            <!-- ================================================
+                 PERSONALIZACIÓN: Actualiza enlaces de redes sociales
+            ================================================= -->
+            <div class="footer-socials">
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Síguenos en Facebook">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Nuestro hashtag en Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <p class="footer-hashtag">#RosendoYInma2026</p>
+
+            <!-- ================================================
+                 PERSONALIZACIÓN: Actualiza email de contacto
+            ================================================= -->
+            <p class="footer-contact">
+                <a href="mailto:boda@pedroylola.com">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    boda@rosendoeinma.com
+                </a>
+            </p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Hecho con <i class="fas fa-heart" aria-hidden="true"></i> para nuestro día especial</p>
+        </div>
+    </footer>
+
+    <!-- ================================================
+         BOTÓN VOLVER ARRIBA
+    ================================================= -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

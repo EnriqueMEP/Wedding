@@ -642,35 +642,41 @@
 
     function handleRSVPSubmit(data) {
         // Log data for demo purposes
-        console.log('RSVP Submitted:', data);
+        console.log('Sending RSVP to FormSubmit...', data);
 
-        // Construct email body
-        const subject = `Confirmación Boda - ${data.name}`;
-        const attendingText = data.attending === 'yes' ? 'SÍ asistiré' : 'NO podré asistir';
-        let body = `Nombre: ${data.name}%0D%0A`;
-        body += `Email: ${data.email}%0D%0A`;
-        body += `Teléfono: ${data.phone || '-'}%0D%0A`;
-        body += `Asistencia: ${attendingText}%0D%0A`;
-
-        if (data.attending === 'yes') {
-            body += `Invitados: ${data.guests}%0D%0A`;
-
-            const dietary = data.dietary === 'allergy' ? (data.allergy || 'Sí') : 'No';
-            body += `Alergias/Dieta: ${dietary}%0D%0A`;
-
-            const busOptions = [];
-            if (data.busIda) busOptions.push('Ida');
-            if (data.busVuelta) busOptions.push('Vuelta');
-            body += `Autobús: ${busOptions.join(', ') || 'No'}%0D%0A`;
+        const submitBtn = document.querySelector('.btn-submit');
+        const originalBtnContent = submitBtn.innerHTML;
+        if (submitBtn) {
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
         }
 
-        body += `Mensaje: ${data.message || '-'}%0D%0A`;
+        // Prepare data for FormSubmit
+        // We can use the data object directly as it contains all form fields
 
-        // Open mailto link
-        window.location.href = `mailto:inmayrosendo1@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-        // Show success message in UI as well
-        showSuccessMessage(data);
+        fetch("https://formsubmit.co/ajax/inmayrosendo1@gmail.com", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Success:', result);
+                showSuccessMessage(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un error al enviar tu respuesta. Por favor inténtalo de nuevo o contacta por email.');
+            })
+            .finally(() => {
+                if (submitBtn) {
+                    submitBtn.innerHTML = originalBtnContent;
+                    submitBtn.disabled = false;
+                }
+            });
     }
 
     function showSuccessMessage(data) {

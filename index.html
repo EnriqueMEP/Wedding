@@ -506,7 +506,14 @@
                          PERSONALIZACIÓN: Para conectar a un backend real, actualiza
                          el action y method del formulario, o modifica el controlador JS
                     ================================================= -->
-                    <form id="rsvpForm" class="rsvp-form" novalidate>
+                    <form id="rsvpForm" class="rsvp-form" action="https://formsubmit.co/inmayrosendo1@gmail.com"
+                        method="POST" novalidate>
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="Nueva Confirmación de Boda!">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                        <!-- Optional, but we use AJAX -->
                         <!-- Paso 1: Información Básica -->
                         <div class="form-step active" data-step="1">
                             <h3>Tus Datos</h3>

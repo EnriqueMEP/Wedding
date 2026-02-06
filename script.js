@@ -644,26 +644,32 @@
         // Log data for demo purposes
         console.log('RSVP Submitted:', data);
 
-        /**
-         * CUSTOMIZATION: To connect to a real backend:
-         *
-         * Example with fetch:
-         * fetch('YOUR_ENDPOINT_URL', {
-         *     method: 'POST',
-         *     headers: { 'Content-Type': 'application/json' },
-         *     body: JSON.stringify(data)
-         * })
-         * .then(response => response.json())
-         * .then(result => {
-         *     showSuccessMessage(data);
-         * })
-         * .catch(error => {
-         *     console.error('Error:', error);
-         *     alert('There was an error submitting your RSVP. Please try again.');
-         * });
-         */
+        // Construct email body
+        const subject = `Confirmación Boda - ${data.name}`;
+        const attendingText = data.attending === 'yes' ? 'SÍ asistiré' : 'NO podré asistir';
+        let body = `Nombre: ${data.name}%0D%0A`;
+        body += `Email: ${data.email}%0D%0A`;
+        body += `Teléfono: ${data.phone || '-'}%0D%0A`;
+        body += `Asistencia: ${attendingText}%0D%0A`;
 
-        // For demo: show success immediately
+        if (data.attending === 'yes') {
+            body += `Invitados: ${data.guests}%0D%0A`;
+
+            const dietary = data.dietary === 'allergy' ? (data.allergy || 'Sí') : 'No';
+            body += `Alergias/Dieta: ${dietary}%0D%0A`;
+
+            const busOptions = [];
+            if (data.busIda) busOptions.push('Ida');
+            if (data.busVuelta) busOptions.push('Vuelta');
+            body += `Autobús: ${busOptions.join(', ') || 'No'}%0D%0A`;
+        }
+
+        body += `Mensaje: ${data.message || '-'}%0D%0A`;
+
+        // Open mailto link
+        window.location.href = `mailto:inmayrosendo1@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+        // Show success message in UI as well
         showSuccessMessage(data);
     }
 

@@ -409,6 +409,7 @@ img {
     background: linear-gradient(135deg, var(--blue-600), var(--blue-700));
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 25px rgba(91, 124, 186, 0.35), 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF !important;
 }
 
 .btn-primary:active {
@@ -439,6 +440,11 @@ img {
 }
 
 /* Hero specific button styling */
+.hero-cta .btn {
+    min-width: 280px;
+    justify-content: center;
+}
+
 .hero-cta .btn-secondary {
     color: #FFFFFF;
     border-color: #FFFFFF;
@@ -890,6 +896,11 @@ img {
     opacity: 0.5;
 }
 
+.hero-content {
+    /* More space from header */
+    padding-top: 140px;
+}
+
 .hero-cta {
     display: flex;
     gap: var(--space-md);
@@ -897,7 +908,8 @@ img {
     flex-wrap: wrap;
     opacity: 0;
     animation: fadeInUp 1s ease forwards 1.5s;
-    margin-bottom: var(--space-4xl);
+    /* Reduced margin to align better with scroll indicator */
+    margin-bottom: var(--space-2xl);
 }
 
 /* Scroll indicator */
@@ -2346,8 +2358,19 @@ img {
         padding: 0 var(--space-md);
     }
 
+    /* Hide header on mobile, only show theme toggle */
+    .main-nav {
+        display: none !important;
+    }
+
+    .hero-content {
+        padding-top: 0;
+        /* Reset padding on mobile if needed, or keep it */
+    }
+
     .hero-cta {
         flex-direction: column;
+        margin-bottom: var(--space-xl);
     }
 
     .hero-cta .btn {
@@ -2382,6 +2405,7 @@ img {
         width: 100%;
     }
 }
+
 
 /* ================================================
    ANIMACIONES DE BODA - CORAZONES FLOTANTES

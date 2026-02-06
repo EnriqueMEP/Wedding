@@ -433,6 +433,17 @@ img {
     transform: scale(0.98);
 }
 
+/* Hero specific button styling */
+.hero-cta .btn-secondary {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.hero-cta .btn-secondary:hover {
+    background: #FFFFFF;
+    color: var(--color-primary);
+}
+
 /* ================================================
    THEME TOGGLE BUTTON
 ================================================ */
@@ -1913,11 +1924,11 @@ img {
 .form-success h3 {
     font-size: var(--text-2xl);
     margin-bottom: var(--space-md);
-    color: #1B2B4A;
+    color: #FFFFFF;
 }
 
 .form-success p {
-    color: #2C4268;
+    color: #FFFFFF;
     margin-bottom: var(--space-xl);
     font-weight: 500;
 }

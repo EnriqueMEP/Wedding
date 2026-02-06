@@ -675,9 +675,9 @@
         const successMessage = document.getElementById('successMessage');
         if (successMessage) {
             if (data.attending === 'yes') {
-                successMessage.textContent = `Thank you, ${data.name}! We're thrilled you'll be joining us. See you at the wedding!`;
+                successMessage.textContent = `¡Gracias, ${data.name}! Estamos encantados de que nos acompañes. ¡Nos vemos en la boda!`;
             } else {
-                successMessage.textContent = `Thank you, ${data.name}, for letting us know. We'll miss you, but we appreciate your response!`;
+                successMessage.textContent = `¡Gracias, ${data.name}, por avisarnos. Te echaremos de menos, pero agradecemos tu respuesta.`;
             }
         }
 
@@ -1069,7 +1069,16 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const counter = entry.target;
-                    const target = parseInt(counter.getAttribute('data-count'));
+                    const targetAttr = counter.getAttribute('data-count');
+
+                    // Skip if no data-count attribute (e.g. for infinity symbol)
+                    if (!targetAttr) return;
+
+                    const target = parseInt(targetAttr);
+
+                    // Skip if target is NaN
+                    if (isNaN(target)) return;
+
                     const duration = 2000;
                     const increment = target / (duration / 16);
                     let current = 0;

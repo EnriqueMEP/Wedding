@@ -433,6 +433,11 @@ img {
     transform: scale(0.98);
 }
 
+.btn-sm {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9em;
+}
+
 /* Hero specific button styling */
 .hero-cta .btn-secondary {
     color: #FFFFFF;

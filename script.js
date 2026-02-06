@@ -12,7 +12,7 @@
  * ================================================
  */
 
-(function() {
+(function () {
     'use strict';
 
     // ================================================
@@ -23,7 +23,7 @@
      * PERSONALIZACIÓN: Establece la fecha de tu boda aquí
      * Formato: 'Mes Día, Año Hora:Minuto:Segundo'
      */
-    const weddingDate = new Date('June 20, 2026 16:00:00');
+    const weddingDate = new Date('March 21, 2026 12:30:00');
 
     /**
      * Verificar si el usuario prefiere movimiento reducido
@@ -96,10 +96,10 @@
         const initial2Elements = document.querySelectorAll('.initial-2');
 
         const isDark = theme === 'dark'; // Pink Mode
-        
+
         // Dark/Pink Mode: Inma & Rosendo
         // Light/Blue Mode: Rosendo & Inma
-        
+
         const name1Text = isDark ? 'Inma' : 'Rosendo';
         const name2Text = isDark ? 'Rosendo' : 'Inma';
         const initial1Text = isDark ? 'I' : 'R';
@@ -117,7 +117,7 @@
         // Check for saved theme preference or default to light
         const savedTheme = localStorage.getItem('weddingTheme');
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
+
         let theme = 'light';
         if (savedTheme) {
             theme = savedTheme;
@@ -492,6 +492,20 @@
     if (attendYes) attendYes.addEventListener('change', toggleGuestsField);
     if (attendNo) attendNo.addEventListener('change', toggleGuestsField);
 
+    // Show/hide allergy field based on dietary selection
+    const dietarySelect = document.getElementById('rsvpDietary');
+    const allergyGroup = document.getElementById('allergyGroup');
+
+    if (dietarySelect && allergyGroup) {
+        dietarySelect.addEventListener('change', function () {
+            if (this.value === 'allergy') {
+                allergyGroup.style.display = 'block';
+            } else {
+                allergyGroup.style.display = 'none';
+            }
+        });
+    }
+
     // Guest counter buttons
     const guestInput = document.getElementById('rsvpGuests');
     const minusBtn = document.querySelector('.counter-btn.minus');
@@ -815,7 +829,7 @@
     // ================================================
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
 
@@ -1003,21 +1017,21 @@
         function createPetal() {
             const petal = document.createElement('div');
             petal.className = 'petal';
-            
+
             // Random position and animation properties
             const leftPosition = Math.random() * 100;
             const animationDuration = 8 + Math.random() * 6;
             const animationDelay = Math.random() * 5;
             const size = 8 + Math.random() * 6;
-            
+
             petal.style.left = `${leftPosition}%`;
             petal.style.animationDuration = `${animationDuration}s`;
             petal.style.animationDelay = `${animationDelay}s`;
             petal.style.width = `${size}px`;
             petal.style.height = `${size}px`;
-            
+
             container.appendChild(petal);
-            
+
             // Remove petal after animation
             setTimeout(() => {
                 petal.remove();
@@ -1046,7 +1060,7 @@
 
     function animateCounters() {
         const counters = document.querySelectorAll('.fact-number');
-        
+
         const observerOptions = {
             threshold: 0.5
         };
@@ -1089,10 +1103,10 @@
         if (prefersReducedMotion) return;
 
         const parallaxElements = document.querySelectorAll('.hero-bg, .bokeh');
-        
+
         window.addEventListener('scroll', throttle(() => {
             const scrolled = window.pageYOffset;
-            
+
             parallaxElements.forEach(el => {
                 const speed = el.classList.contains('bokeh') ? 0.3 : 0.5;
                 el.style.transform = `translateY(${scrolled * speed}px)`;
@@ -1108,13 +1122,13 @@
 
     function initCardShineEffect() {
         const cards = document.querySelectorAll('.glass-card, .fact-card, .schedule-card');
-        
+
         cards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                
+
                 card.style.setProperty('--mouse-x', `${x}px`);
                 card.style.setProperty('--mouse-y', `${y}px`);
             });
@@ -1169,35 +1183,35 @@
                 pointer-events: none;
                 z-index: 9999;
             `;
-            
+
             document.body.appendChild(confetti);
-            
+
             const angle = (Math.PI * 2 * i) / 15;
             const velocity = 3 + Math.random() * 3;
             const vx = Math.cos(angle) * velocity;
             const vy = Math.sin(angle) * velocity;
-            
+
             let posX = x;
             let posY = y;
             let opacity = 1;
-            
+
             const animate = () => {
                 posX += vx;
                 posY += vy + 2;
                 opacity -= 0.02;
-                
+
                 confetti.style.left = posX + 'px';
                 confetti.style.top = posY + 'px';
                 confetti.style.opacity = opacity;
                 confetti.style.transform = `rotate(${posX}deg)`;
-                
+
                 if (opacity > 0) {
                     requestAnimationFrame(animate);
                 } else {
                     confetti.remove();
                 }
             };
-            
+
             animate();
         }
     }
@@ -1218,7 +1232,7 @@
 
     function enhancedRevealAnimation() {
         const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
-        
+
         const observerOptions = {
             threshold: 0.15,
             rootMargin: '0px 0px -50px 0px'
@@ -1241,50 +1255,55 @@
     enhancedRevealAnimation();
 
     // ================================================
-    // MÚSICA DE FONDO (Opcional - comentado por defecto)
+    // MÚSICA DE FONDO
     // ================================================
 
-    /*
     function initBackgroundMusic() {
-        const audio = new Audio('path/to/your/wedding-song.mp3');
-        audio.loop = true;
+        const audio = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+
+        if (!audio || !musicToggle) return;
+
         audio.volume = 0.3;
-        
-        const musicToggle = document.createElement('button');
-        musicToggle.className = 'music-toggle';
-        musicToggle.innerHTML = '<i class="fas fa-music"></i>';
-        musicToggle.style.cssText = `
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: var(--shadow-xl);
-            transition: all 0.3s ease;
-        `;
-        
-        let isPlaying = false;
-        
-        musicToggle.addEventListener('click', () => {
+        let isPlaying = true;
+
+        // Intentar reproducir automáticamente
+        audio.play().then(() => {
+            musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+            musicToggle.setAttribute('aria-label', 'Pausar música');
+            musicToggle.setAttribute('title', 'Pausar música');
+        }).catch(() => {
+            // Si el navegador bloquea autoplay, esperar primer clic del usuario
+            isPlaying = false;
+            document.addEventListener('click', function playOnFirstClick() {
+                if (!isPlaying) {
+                    audio.play();
+                    musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                    musicToggle.setAttribute('aria-label', 'Pausar música');
+                    musicToggle.setAttribute('title', 'Pausar música');
+                    isPlaying = true;
+                }
+                document.removeEventListener('click', playOnFirstClick);
+            }, { once: true });
+        });
+
+        musicToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             if (isPlaying) {
                 audio.pause();
                 musicToggle.innerHTML = '<i class="fas fa-music"></i>';
+                musicToggle.setAttribute('aria-label', 'Reproducir música');
+                musicToggle.setAttribute('title', 'Reproducir música');
             } else {
                 audio.play();
                 musicToggle.innerHTML = '<i class="fas fa-pause"></i>';
+                musicToggle.setAttribute('aria-label', 'Pausar música');
+                musicToggle.setAttribute('title', 'Pausar música');
             }
             isPlaying = !isPlaying;
         });
-        
-        document.body.appendChild(musicToggle);
     }
-    // Descomentar para activar: initBackgroundMusic();
-    */
+
+    initBackgroundMusic();
 
 })();

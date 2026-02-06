@@ -881,6 +881,7 @@ img {
     flex-wrap: wrap;
     opacity: 0;
     animation: fadeInUp 1s ease forwards 1.5s;
+    margin-bottom: var(--space-4xl);
 }
 
 /* Scroll indicator */
@@ -1258,8 +1259,9 @@ img {
 
 .venue-image img {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
     transition: transform var(--transition-slow);
 }
 
@@ -1667,6 +1669,8 @@ img {
     max-width: 600px;
     margin: 0 auto;
     padding: var(--space-2xl);
+    background: rgba(27, 43, 74, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Progress steps */
@@ -1706,13 +1710,14 @@ img {
 
 .step-label {
     font-size: var(--text-xs);
-    color: var(--blue-300);
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-weight: 600;
 }
 
 .progress-step.active .step-label {
-    color: var(--color-white);
+    color: #FFFFFF;
 }
 
 .progress-line {
@@ -1736,7 +1741,9 @@ img {
     text-align: center;
     font-size: var(--text-xl);
     margin-bottom: var(--space-xl);
-    color: var(--color-white);
+    color: #FFFFFF;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
@@ -1745,10 +1752,11 @@ img {
 
 .form-group label {
     display: block;
-    font-size: var(--text-sm);
-    font-weight: 500;
+    font-size: var(--text-base);
+    font-weight: 700;
     margin-bottom: var(--space-sm);
-    color: var(--blue-200);
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .form-group input[type="text"],
@@ -1761,8 +1769,8 @@ img {
     padding: var(--space-md);
     font-family: var(--font-body);
     font-size: var(--text-base);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--blue-600);
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid var(--blue-400);
     border-radius: var(--radius-md);
     color: var(--color-white);
     transition: all var(--transition-fast);
@@ -1770,7 +1778,7 @@ img {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: var(--blue-400);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .form-group input:focus,
@@ -1905,11 +1913,13 @@ img {
 .form-success h3 {
     font-size: var(--text-2xl);
     margin-bottom: var(--space-md);
+    color: #1B2B4A;
 }
 
 .form-success p {
-    color: var(--blue-200);
+    color: #2C4268;
     margin-bottom: var(--space-xl);
+    font-weight: 500;
 }
 
 /* ================================================
@@ -2799,4 +2809,91 @@ section {
     .facts-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Infinity symbol styling */
+.fact-infinity {
+    font-size: var(--text-4xl);
+    font-weight: 400;
+}
+
+/* ================================================
+   BOTÓN DE MÚSICA
+================================================ */
+.music-toggle {
+    position: fixed;
+    bottom: var(--space-xl);
+    left: var(--space-xl);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--blue-600));
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-fixed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-lg);
+    transition: all var(--transition-base);
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+/* ================================================
+   OPCIONES DE AUTOBÚS
+================================================ */
+.bus-options {
+    display: flex;
+    gap: var(--space-xl);
+    margin-top: var(--space-sm);
+}
+
+.bus-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.bus-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.bus-option label {
+    color: var(--color-white);
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+/* ================================================
+   CAMPO DE ALERGIA
+================================================ */
+#allergyGroup input {
+    width: 100%;
+    padding: var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--blue-600);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    transition: all var(--transition-fast);
+}
+
+#allergyGroup input::placeholder {
+    color: var(--blue-400);
+}
+
+#allergyGroup input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(91, 124, 186, 0.2);
 }

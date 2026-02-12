@@ -34,10 +34,7 @@
     <!-- ================================================
          MODO OSCURO (Posición Fija)
     ================================================= -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar modo oscuro" title="Cambiar modo oscuro">
-        <i class="fas fa-venus" aria-hidden="true"></i>
-        <i class="fas fa-mars" aria-hidden="true"></i>
-    </button>
+
 
     <!-- ================================================
          NAVEGACIÓN
@@ -281,7 +278,8 @@
                         </div>
                         <div class="schedule-time">12:30h</div>
                         <h3 class="schedule-title">Ceremonia</h3>
-                        <p class="schedule-description">Acompáñanos en nuestro enlace, el cuál tendrá lugar a las 12:30h en la Iglesia Sagrado Corazón.</p>
+                        <p class="schedule-description">Acompáñanos en nuestro enlace, el cuál tendrá lugar a las 12:30h
+                            en la Iglesia Sagrado Corazón.</p>
                         <a href="https://www.google.com/maps/dir//Parroquia+Sagrado+Coraz%C3%B3n,+Plaza+Cristo+De+La+Salud,+2,+41720+Los+Palacios+y+Villafranca,+Sevilla/@37.158912,-5.931008,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd1277dcc335d4d1:0xbb57ddade8508635!2m2!1d-5.9233989!2d37.1589386?entry=ttu&g_ep=EgoyMDI2MDIwMy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
                             target="_blank" class="btn btn-secondary btn-sm">Cómo llegar</a>
                     </article>
@@ -292,7 +290,8 @@
                         </div>
                         <div class="schedule-time">14:00h</div>
                         <h3 class="schedule-title">Celebración</h3>
-                        <p class="schedule-description">En Finca Santa Clotilde disfrutaremos de un exquisito banquete tras el que continuaremos celebrando con una fiesta inolvidable.</p>
+                        <p class="schedule-description">En Finca Santa Clotilde disfrutaremos de un exquisito banquete
+                            tras el que continuaremos celebrando con una fiesta inolvidable.</p>
                         <a href="https://maps.google.com/?q=Finca+Santa+Clotilde" target="_blank"
                             class="btn btn-secondary btn-sm">Cómo llegar</a>
                     </article>
@@ -394,6 +393,42 @@
             </div>
         </section>
 
+
+        <!-- ================================================
+             GALERÍA DE FOTOS
+        ================================================= -->
+        <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up" id="gallery-heading">Nuestros Momentos</h2>
+                    <p class="section-description reveal-up">Una pequeña ventana a nuestra vida juntos</p>
+                </header>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item gallery-item-tall">
+                        <img src="1.jpeg" alt="Nosotros 1" loading="lazy">
+                        <figcaption>Juntos</figcaption>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="2.jpeg" alt="Nosotros 2" loading="lazy">
+                        <figcaption>Momentos</figcaption>
+                    </div>
+                    <div class="gallery-item gallery-item-wide">
+                        <img src="3.jpeg" alt="Nosotros 3" loading="lazy">
+                        <figcaption>Aventuras</figcaption>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="4.jpeg" alt="Nosotros 4" loading="lazy">
+                        <figcaption>Sonrisas</figcaption>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="5.jpeg" alt="Nosotros 5" loading="lazy">
+                        <figcaption>Amor</figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ================================================
              CÓDIGO DE VESTIMENTA Y PREGUNTAS FRECUENTES
         ================================================= -->
@@ -468,6 +503,43 @@
             </div>
         </section>
 
+
+
+
+        <!-- ================================================
+             GALERÍA DE FOTOS
+        ================================================= -->
+        <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title reveal-up" id="gallery-heading">Nuestros Momentos</h2>
+                    <p class="section-description reveal-up">Una pequeña ventana a nuestra vida juntos</p>
+                </header>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item gallery-item-tall">
+                        <img src="1.jpeg" alt="Nosotros 1" loading="lazy">
+                        <figcaption>Juntos</figcaption>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="2.jpeg" alt="Nosotros 2" loading="lazy">
+                        <figcaption>Momentos</figcaption>
+                    </div>
+                    <div class="gallery-item gallery-item-wide">
+                        <img src="3.jpeg" alt="Nosotros 3" loading="lazy">
+                        <figcaption>Aventuras</figcaption>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="4.jpeg" alt="Nosotros 4" loading="lazy">
+                        <figcaption>Sonrisas</figcaption>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="5.jpeg" alt="Nosotros 5" loading="lazy">
+                        <figcaption>Amor</figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
         <!-- ================================================
@@ -675,7 +747,30 @@
             <p class="footer-message">Gracias por ser parte de nuestro día especial</p>
 
 
+            <!-- ================================================
+         LIGHTBOX (Galería)
+    ================================================= -->
+            <div class="lightbox" id="lightbox" hidden>
+                <div class="lightbox-overlay"></div>
+                <div class="lightbox-content">
+                    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar galería">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button class="lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="lightbox-image-container">
+                        <img src="" alt="" class="lightbox-image" id="lightboxImage">
+                        <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+                    </div>
+                    <button class="lightbox-next" id="lightboxNext" aria-label="Siguiente imagen">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
 
+            <!-- Scripts -->
+            <script src="script.js"></script>
             <!-- ================================================
                  PERSONALIZACIÓN: Actualiza email de contacto
             ================================================= -->

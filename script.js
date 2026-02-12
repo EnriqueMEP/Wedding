@@ -85,65 +85,8 @@
     // DARK MODE TOGGLE
     // ================================================
 
-    // ================================================
-    // DYNAMIC NAME SWITCHING
-    // ================================================
-
-    function updateNames(theme) {
-        const name1Elements = document.querySelectorAll('.name-1');
-        const name2Elements = document.querySelectorAll('.name-2');
-        const initial1Elements = document.querySelectorAll('.initial-1');
-        const initial2Elements = document.querySelectorAll('.initial-2');
-
-        const isDark = theme === 'dark'; // Pink Mode
-
-        // Dark/Pink Mode: Inma & Rosendo
-        // Light/Blue Mode: Rosendo & Inma
-
-        const name1Text = isDark ? 'Inma' : 'Rosendo';
-        const name2Text = isDark ? 'Rosendo' : 'Inma';
-        const initial1Text = isDark ? 'I' : 'R';
-        const initial2Text = isDark ? 'R' : 'I';
-
-        name1Elements.forEach(el => el.textContent = name1Text);
-        name2Elements.forEach(el => el.textContent = name2Text);
-        initial1Elements.forEach(el => el.textContent = initial1Text);
-        initial2Elements.forEach(el => el.textContent = initial2Text);
-    }
-
-    const themeToggle = document.getElementById('themeToggle');
-
-    function initTheme() {
-        // Check for saved theme preference or default to light
-        const savedTheme = localStorage.getItem('weddingTheme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        let theme = 'light';
-        if (savedTheme) {
-            theme = savedTheme;
-        } else if (prefersDark) {
-            theme = 'dark';
-        }
-
-        document.documentElement.setAttribute('data-theme', theme);
-        updateNames(theme);
-    }
-
-    function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('weddingTheme', newTheme);
-        updateNames(newTheme);
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-
-    // Initialize theme on page load
-    initTheme();
+    // Theme handling removed - Defaulting to static Blue theme
+    document.documentElement.setAttribute('data-theme', 'light');
 
     // ================================================
     // NAVIGATION

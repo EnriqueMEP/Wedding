@@ -444,8 +444,12 @@ img {
     font-family: var(--font-display);
     font-size: var(--text-2xl);
     font-weight: 600;
-    color: var(--color-text);
+    color: var(--color-white);
     transition: color var(--transition-fast);
+}
+
+.main-nav.scrolled .nav-logo {
+    color: var(--color-text);
 }
 
 .nav-logo:hover {
@@ -462,10 +466,15 @@ img {
     position: relative;
     font-size: var(--text-sm);
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--color-white);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: var(--space-sm) 0;
+    transition: color var(--transition-fast);
+}
+
+.main-nav.scrolled .nav-menu a {
+    color: var(--color-text);
 }
 
 .nav-menu a::after {
@@ -501,8 +510,14 @@ img {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--color-text);
+    background: var(--color-white);
     transition: all var(--transition-base);
+}
+
+.main-nav.scrolled .hamburger,
+.main-nav.scrolled .hamburger::before,
+.main-nav.scrolled .hamburger::after {
+    background: var(--color-text);
 }
 
 .hamburger {
@@ -731,6 +746,7 @@ img {
     font-weight: 400;
     font-style: italic;
     line-height: 1.1;
+    color: var(--color-white);
     opacity: 0;
     animation: fadeInUp 1.2s ease forwards;
 }
@@ -3009,8 +3025,9 @@ section {
 .lightbox-close:hover,
 .lightbox-prev:hover,
 .lightbox-next:hover {
-    background: var(--color-primary);
-    transform: scale(1.1);
+    /* No hover effect on desktop per request */
+    background: rgba(255, 255, 255, 0.1);
+    transform: none;
 }
 
 .lightbox-close {

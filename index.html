@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Boda de Inma y Rosendo - 21 de Marzo de 2026">
 
     <!-- ================================================
@@ -31,9 +31,6 @@
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ================================================
-         MODO OSCURO (Posición Fija)
-    ================================================= -->
 
 
     <!-- ================================================
@@ -393,7 +390,6 @@
             </div>
         </section>
 
-
         <!-- ================================================
              GALERÍA DE FOTOS
         ================================================= -->
@@ -405,25 +401,20 @@
                 </header>
 
                 <div class="gallery-grid">
-                    <div class="gallery-item gallery-item-tall">
+                    <div class="gallery-item">
                         <img src="1.jpeg" alt="Nosotros 1" loading="lazy">
-                        <figcaption>Juntos</figcaption>
                     </div>
                     <div class="gallery-item">
                         <img src="2.jpeg" alt="Nosotros 2" loading="lazy">
-                        <figcaption>Momentos</figcaption>
                     </div>
-                    <div class="gallery-item gallery-item-wide">
+                    <div class="gallery-item">
                         <img src="3.jpeg" alt="Nosotros 3" loading="lazy">
-                        <figcaption>Aventuras</figcaption>
                     </div>
                     <div class="gallery-item">
                         <img src="4.jpeg" alt="Nosotros 4" loading="lazy">
-                        <figcaption>Sonrisas</figcaption>
                     </div>
                     <div class="gallery-item">
                         <img src="5.jpeg" alt="Nosotros 5" loading="lazy">
-                        <figcaption>Amor</figcaption>
                     </div>
                 </div>
             </div>
@@ -503,38 +494,6 @@
             </div>
         </section>
 
-
-
-
-        <!-- ================================================
-             GALERÍA DE FOTOS
-        ================================================= -->
-        <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
-            <div class="container">
-                <header class="section-header">
-                    <h2 class="section-title reveal-up" id="gallery-heading">Nuestros Momentos</h2>
-                    <p class="section-description reveal-up">Una pequeña ventana a nuestra vida juntos</p>
-                </header>
-
-                <div class="gallery-grid">
-                    <div class="gallery-item gallery-item-tall">
-                        <img src="1.jpeg" alt="Nosotros 1" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="2.jpeg" alt="Nosotros 2" loading="lazy">
-                    </div>
-                    <div class="gallery-item gallery-item-wide">
-                        <img src="3.jpeg" alt="Nosotros 3" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="4.jpeg" alt="Nosotros 4" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="5.jpeg" alt="Nosotros 5" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
         <!-- ================================================
@@ -742,30 +701,7 @@
             <p class="footer-message">Gracias por ser parte de nuestro día especial</p>
 
 
-            <!-- ================================================
-         LIGHTBOX (Galería)
-    ================================================= -->
-            <div class="lightbox" id="lightbox" hidden>
-                <div class="lightbox-overlay"></div>
-                <div class="lightbox-content">
-                    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar galería">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    <button class="lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="lightbox-image-container">
-                        <img src="" alt="" class="lightbox-image" id="lightboxImage">
-                        <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
-                    </div>
-                    <button class="lightbox-next" id="lightboxNext" aria-label="Siguiente imagen">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
 
-            <!-- Scripts -->
-            <script src="script.js"></script>
             <!-- ================================================
                  PERSONALIZACIÓN: Actualiza email de contacto
             ================================================= -->
@@ -793,6 +729,28 @@
     <button class="music-toggle" id="musicToggle" aria-label="Reproducir música" title="Reproducir música">
         <i class="fas fa-music" aria-hidden="true"></i>
     </button>
+
+    <!-- ================================================
+         LIGHTBOX (Galería)
+    ================================================= -->
+    <div class="lightbox" id="lightbox" hidden>
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar galería">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="lightbox-prev" id="lightboxPrev" aria-label="Imagen anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="lightbox-image-container">
+                <img src="" alt="" class="lightbox-image" id="lightboxImage">
+                <figcaption class="lightbox-caption" id="lightboxCaption"></figcaption>
+            </div>
+            <button class="lightbox-next" id="lightboxNext" aria-label="Siguiente imagen">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- Main JavaScript -->
     <script src="script.js"></script>

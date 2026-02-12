@@ -85,8 +85,7 @@
     // DARK MODE TOGGLE
     // ================================================
 
-    // Theme handling removed - Defaulting to static Blue theme
-    document.documentElement.setAttribute('data-theme', 'light');
+
 
     // ================================================
     // NAVIGATION

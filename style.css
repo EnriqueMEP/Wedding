@@ -1,3 +1,37 @@
+/* ================= LIMONES DECORATIVOS ================= */
+.story-lemons {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin-bottom: 1.5rem;
+}
+.lemon {
+    position: absolute;
+    top: 0;
+    width: 80px;
+    max-width: 25vw;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+    transition: transform 0.3s;
+}
+.lemon-left {
+    left: 0;
+    transform: translateY(-20%);
+}
+.lemon-right {
+    right: 0;
+    transform: translateY(-20%) scaleX(-1);
+}
+@media (max-width: 600px) {
+    .lemon {
+        width: 48px;
+        max-width: 30vw;
+    }
+    .lemon-left, .lemon-right {
+        transform: translateY(-10%);
+    }
+}
 /* ================================================
    WEB DE BODA PREMIUM - STYLE.CSS
    Tema Azul con Animaciones Románticas
